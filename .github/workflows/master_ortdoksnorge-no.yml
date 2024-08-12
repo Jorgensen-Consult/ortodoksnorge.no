@@ -25,13 +25,13 @@ jobs:
         run: dotnet build --configuration Release
 
       - name: dotnet publish
-        run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/OrtodoksNorge.Web
+        run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/ortodoksnorge.no/OrtodoksNorge.Web/OrtodoksNorge.Web.csproj
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
         with:
           name: .net-app
-          path: ${{env.DOTNET_ROOT}}/OrtodoksNorge.Web
+          path: ${{env.DOTNET_ROOT}}/ortodoksnorge.no/OrtodoksNorge.Web/OrtodoksNorge.Web.csproj
 
   deploy:
     runs-on: windows-latest
