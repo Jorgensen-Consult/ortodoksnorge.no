@@ -1,2 +1,28 @@
-﻿@{
-}
+﻿<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    @if (!string.IsNullOrWhiteSpace(ViewData["SubTitle"]?.ToString()))
+    {
+        <title> @ViewData["Title"] - @ViewData["SubTitle"]</title>
+    }
+    else
+    {
+        <title>@ViewData["Title"]</title>
+    }
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/PrivateAccounting.Web.styles.css" asp-append-version="true" />
+</head>
+<body>
+
+    <div id="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+</body>
+</html>
